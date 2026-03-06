@@ -17,7 +17,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing dependencies...'
-                bat "python -m pip install pytest"
+                bat "pip install pytest"
             }
         }
 
