@@ -13,14 +13,14 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing dependencies...'
-                bat 'pip install pytest --break-system-packages || pip install pytest'
+                bat '"C:\\Users\\Othman SALAHI\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install pytest'
             }
         }
 
         stage('Run Tests') {
             steps {
                 echo 'Running unit tests...'
-                bat 'python -m pytest test_calculator.py -v'
+                bat '"C:\\Users\\Othman SALAHI\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest test_calculator.py -v'
             }
         }
 
