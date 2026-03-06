@@ -13,14 +13,14 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing dependencies...'
-                sh 'pip install pytest --break-system-packages || pip install pytest'
+                bat 'pip install pytest --break-system-packages || pip install pytest'
             }
         }
 
         stage('Run Tests') {
             steps {
                 echo 'Running unit tests...'
-                sh 'python -m pytest test_calculator.py -v'
+                bat 'python -m pytest test_calculator.py -v'
             }
         }
 
