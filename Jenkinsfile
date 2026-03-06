@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PYTHON = '"C:\\Users\\Othman SALAHI\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"'
+    }
+
     stages {
 
         stage('Checkout') {
@@ -13,14 +17,14 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing dependencies...'
-                bat '"C:\\Users\\Othman SALAHI\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install pytest'
+                bat "%PYTHON% -m pip install pytest"
             }
         }
 
         stage('Run Tests') {
             steps {
                 echo 'Running unit tests...'
-                bat '"C:\\Users\\Othman SALAHI\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest test_calculator.py -v'
+                bat "%PYTHON% -m pytest test_calculator.py -v"
             }
         }
 
